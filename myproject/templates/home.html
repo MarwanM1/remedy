@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Accueil</li>
+{% endblock %}
+
+{% block content %}
+    <head>
+
+    </head>
+    <body>
+      <br>
+    <center><h3>Hello, bienvenue sur le site de Remedy {{ user.username }} !</h3></center>
+   <br>
+   <br>
+<div class="alert alert-primary" role="alert">
+
+   <svg class="bi bi-info-circle" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd"/> 
+  <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/> 
+  <circle cx="8" cy="4.5" r="1"/> 
+</svg>
+ <p>Vous trouverez ci-dessous la description des paquets : </p>
+<br> 
+<p> Paquet 1 : Ce paquet contient les ressources primaires dont vous aurez besoin pour vous nourrir. Il contient : un petit déjeuner (craquotte, pain, oeufs, confiture, beurre, céréales, lait, chocolat, café, fruits), un déjeuner (pain, salade de thon, pâtes, légume vert, viande de poulet/boeuf, yaourt), un dîner (soupe, purée de pommes de terre, poisson, pain) et ceci pour 2 personnes.</p>
+<br>
+<p> Paquet 2 : Ce paquet est une variante végétarienne du paquet 1. Il contient : un petit déjeuner (pain , beurre, flocons d'avoine, chocolat, fruits), un déjeuner (pain, salade de tomates mozarella, quinoa, boulgour), un dîner (tofu, légume vert, pain) cette ration est pour 2 personnes </p>
+<br>
+<p> Paquet 3 : Ce paquet est un plat contenant des crustacés, poissons : Il contient : un petit déjeuner (pain , beurre, flocons d'avoine, chocolat, craquotte, fruits), un déjeuner (salade niçoise, saumon à griller, brocoli, courgette, yaourt, fruits, pain), un dîner (soupe de légume, riz, cabillaud, sauce beurre blanc, pain). Cette ration est suffisante pour 2 personnes. </p>
+<br>
+<p> Paquet 4 : Ce paquet contient des ressources brutes. Aussi, à l'intérieur nous y trouvons : de la farine , de l'eau, du pain, des oeufs, du beurre, du sucre, de la semoule, de la crème fraiche, des épices, sel, poivre, des amandes, noix. Ce paquet contient assez de ressources pour 2 personnes.</p>
+<br>
+<p> Paquet 5 : Ce paquet est un pack contenant des produits d'entretiens nécessaires. Nous y trouvons notamment de la lessive, détergent, javel, destop, savon, éponge, brosse et autres. </p>
+<br>
+<p> Paquet 6 : à venir ... </p>
+</div>
+<br>
+<div class="alert alert-danger" role="alert">
+  <svg class="bi bi-exclamation-diamond" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 010-2.098L6.95.435zm1.4.7a.495.495 0 00-.7 0L1.134 7.65a.495.495 0 000 .7l6.516 6.516a.495.495 0 00.7 0l6.516-6.516a.495.495 0 000-.7L8.35 1.134z" clip-rule="evenodd"/>
+  <path d="M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z"/>
+</svg>
+  <b>Vous vous engagez : à ne pas commander plus de ce dont vous avez besoins, à nous retourner en bon état les produits non utilisés. Aussi, nous vous demandons d'être solidaire, indulgent, reconnaissant, respectueux. Tout abus sera lourdement sanctionné.</b>
+</div>
+
+          <form method="post" novalidate >
+            {% csrf_token %}
+            {% include 'includes/form.html' %}
+            <button type="submit" class="btn btn-primary btn-block">Soumettre</button>
+          </form>
+
+
+    </body>
+
+{% endblock %}
